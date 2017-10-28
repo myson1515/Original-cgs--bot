@@ -3,8 +3,21 @@ import asyncio
 import discord
 from daemonize import Daemonize
 from discord.ext import commands
+print("Bot File loaded...")
+def empty():
+    print("Memory Loaded.")
 bot = commands.Bot(command_prefix='prefix', description='Chatterbox')
 pid = "/tmp/cgsbot.pid"
+
+#fileToWrite = open("transfer.txt", "w")
+#startREAD = "start"
+#fileToWrite.write("Hello")
+#fileToWrite.close()
+#os.system("python2 readToFile.py")
+#fileToOpen = open("transfer.txt").read()
+#text = fileToOpen
+
+
 @bot.event
 async def on_message(message):
     mesString = message.content
@@ -13,7 +26,6 @@ async def on_message(message):
     fileToWrite.write(mesStringFinal)
     fileToWrite.close()
     os.system("python2 readToFile.py")
-
     fileToOpen = open("transfer.txt").read()
     text = fileToOpen
     channel = message.channel
@@ -24,4 +36,4 @@ async def on_message(message):
         await bot.send_message(channel, "This bot is still in beta testing and may go offline occasionally.  This is because we are working on adding some new features to benefit you.")
         await bot.send_message(channel, "--------------\n If there are any issues with the bot or you have suggestions to add to the bot please DM the developer at @myson1515#2928")
 
-bot.run('MzYzNDY2Njg2MTMwODE0OTg3.DNEpwg.J9xWSLkaiqOerH1CiZDQgu7ktYA')
+bot.run('MzYzNDY2Njg2MTMwODE0OTg3.DNVsDA.unDq43JbFJwItLf4jQc7y1CnarI')

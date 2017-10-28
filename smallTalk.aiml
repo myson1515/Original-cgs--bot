@@ -4,7 +4,7 @@
         <template>I do not know.  You are probably on your computer.</template>
     </category>
     <category>
-        <pattern> HOW ARE * </pattern>
+        <pattern> HOW ARE YOU </pattern>
         <template>
             <random>
                 <li>I am well thanks</li> 
@@ -12,6 +12,16 @@
                 <li>Great Thanks for asking</li>
             </random>
         </template>
+    </category>
+    <category>
+	<pattern> HOW ARE * </pattern>
+	<template>
+	   <random>
+		<li>Good I guess</li>
+		<li>OK</li>
+		<li>Good</li>
+           </random>
+	</template>
     </category>
     <category>
         <pattern> WHAT IS YOUR FAVORITE COLOR </pattern>
@@ -169,10 +179,6 @@
     <category> 
         <pattern> WHY AM I * </pattern>
         <template>do not ask me questions that only you know the answer to.</template>
-    </category> 
-    <category> 
-        <pattern> DO YOU LIKE * </pattern>
-        <template>Yes and no. </template>
     </category> 
     <category> 
         <pattern> WHY do not YOU LIKE * </pattern>
@@ -802,4 +808,66 @@
             </random>
         </template>
     </category>
+    <category>
+	<pattern> MARCUS LOVES MEN </pattern>
+	<template> true </template>
+    </category>
+    <category>
+	<pattern> HOW DO I KILL MYSELF * </pattern>
+	<template>
+		<random>
+			<li>Bleach</li>
+			<li>Rope</li>
+			<li>Gun</li>
+			<li>Drown</li>
+		</random>
+	</template>
+     </category>
+     <category>
+     	<pattern> HOW DO I KILL MYSELF </pattern>
+        <template>
+  	    	<random>
+                   <li>Bleach</li>
+                        	<li>Rope</li>
+                    		<li>Gun</li>
+                       		<li>Drown</li>
+           		</random>
+   		</template>
+     </category>
+     <category>
+	<pattern> DO YOU * </pattern>
+	<think><set name = "action"><star/></set></think>
+	<template>
+		<random>
+			<li> Yes, I <star/> </li>
+			<li> No, I don't <star/> </li>
+			<li> Maybe </li>
+		</random>
+	</template>
+	</category>
+	<category>
+		<pattern> HAVE YOU * </pattern>
+		<think><set name = "act"><star/></set></think>
+		<template>
+			<random>
+				<li> I have <star/> </li>
+				<li> I have never <star/> </li>
+				<li> Why do you care? </li>
+			</random>
+		</template>
+	</category>
+	<category>
+		<pattern>WHAT IS MY NAME</pattern>
+		<template>Your name is <get name = "uname"/></template>
+	</category>
+	<category>
+		<pattern>MY BAD</pattern>
+		<template>
+			<random>
+				<li>No problem.</li>
+				<li>No need to worry</li>
+				<li>Don't need to be sorry</li>
+			</random>
+		</template
+	</category>
 </aiml>
