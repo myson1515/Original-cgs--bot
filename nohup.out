@@ -1,0 +1,4 @@
+  File "CGSbot.py", line 24
+    async def on_message(message):
+        ^
+SyntaxError: invalid syntax

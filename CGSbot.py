@@ -3,18 +3,19 @@ import asyncio
 import discord
 from daemonize import Daemonize
 from discord.ext import commands
-print("Bot File loaded...")
+#print("Bot File loaded...")
 count = 0
 def empty():
     print("Memory Loaded.")
 bot = commands.Bot(command_prefix='prefix', description='Chatterbox')
 pid = "/tmp/cgsbot.pid"
 
-fileToWrite = open("transfer.txt", "w")
+#fileToWrite = open("transfer.txt", "w")
 #startREAD = "start"
-fileToWrite.write("hi \n1")
-fileToWrite.close()
-os.system("python2 readToFile.py")
+
+#fileToWrite.write("hi \n1")
+#fileToWrite.close()
+#os.system("python2 readToFile.py")
 #fileToOpen = open("transfer.txt").read()
 #text = fileToOpen
 
@@ -34,16 +35,16 @@ async def on_message(message):
     fileToWrite = open("transfer.txt", "w")
     fileToOpen = open("transfer.txt")
     lines = fileToOpen.readlines()
-    mesStringFinal = mesString[8:] + "\n1"
+    mesStringFinal = mesString[8:]
     fileToWrite.write(mesStringFinal)
-    print(mesStringFinal)
+    #print(mesStringFinal)
     fileToWrite.close()
     os.system("python2 readToFile.py")
     fileToOpen2 = open("transfer.txt").read()
     text = fileToOpen2
     channel = message.channel
     if message.content.startswith("!cgsbot"):
-        print(text)
+        #print(text)
         await bot.send_message(channel, text)
     if message.content.startswith("!help"):
         await bot.send_message(channel,"Welcome to help!\n --------------")
@@ -52,3 +53,4 @@ async def on_message(message):
         await bot.send_message(channel, "--------------\n If there are any issues with the bot or you have suggestions to add to the bot please DM the developer at @myson1515#2928")
 
 bot.run('MzYzNDY2Njg2MTMwODE0OTg3.DNVsDA.unDq43JbFJwItLf4jQc7y1CnarI')
+daemon.damonize()
