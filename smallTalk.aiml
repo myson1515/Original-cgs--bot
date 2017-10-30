@@ -504,7 +504,7 @@
         <pattern> I WANT TO DIE </pattern>
         <template>
             <random>
-                <li>That is a shame.  Who else would I have to talk too?</li>
+                <li>That is a shame.  Who else would I have to talk to?</li>
                 <li>I am sorry to here that.</li>
                 <li>That sucks.</li>
             </random>
@@ -820,6 +820,7 @@
 			<li>Rope</li>
 			<li>Gun</li>
 			<li>Drown</li>
+			<li>There's no need to kill yourself!</li>
 		</random>
 	</template>
      </category>
@@ -827,11 +828,12 @@
      	<pattern> HOW DO I KILL MYSELF </pattern>
         <template>
   	    	<random>
-                   <li>Bleach</li>
-                        	<li>Rope</li>
-                    		<li>Gun</li>
-                       		<li>Drown</li>
-           		</random>
+		        <li>Bleach</li>
+                      	<li>Rope</li>
+                 	<li>Gun</li>
+                       	<li>Drown</li>
+			<li>There's no need to kill yourself!</li>
+           	</random>
    		</template>
      </category>
      <category>
@@ -869,5 +871,9 @@
 				<li>Don't need to be sorry</li>
 			</random>
 		</template>
+	</category>
+	<category>
+		<pattern>WHAT IS CGS</pattern>
+		<template>CGS stands for the Center of Global Studies which is a school in Norwalk.</template>
 	</category>
 </aiml>
