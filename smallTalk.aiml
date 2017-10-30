@@ -876,4 +876,13 @@
 		<pattern>WHAT IS CGS</pattern>
 		<template>CGS stands for the Center of Global Studies which is a school in Norwalk.</template>
 	</category>
+	<category>
+		<pattern>WHO IS JAKE ROLLER</pattern>
+		<template>
+			<random>
+				<li>Just another Programmer</li>
+				<li>A Programmer who helped program the bot you are speaking to</li>
+			</random>
+		</template>
+	</category>
 </aiml>
