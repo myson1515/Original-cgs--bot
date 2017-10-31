@@ -1,8 +1,10 @@
+import datetime
 import os
 import asyncio
 import discord
 from daemonize import Daemonize
 from discord.ext import commands
+#print(datetime.datetime.now())
 #print("Bot File loaded...")
 count = 0
 def empty():
@@ -18,6 +20,8 @@ pid = "/tmp/cgsbot.pid"
 #os.system("python2 readToFile.py")
 #fileToOpen = open("transfer.txt").read()
 #text = fileToOpen
+
+
 
 
 @bot.event
@@ -51,6 +55,10 @@ async def on_message(message):
         await bot.send_message(channel, "To talk to my artificial inteligence module please type !cgsbot 'what you want to say to the bot'")
         await bot.send_message(channel, "This bot is still in beta testing and may go offline occasionally.  This is because we are working on adding some new features to benefit you.")
         await bot.send_message(channel, "--------------\n If there are any issues with the bot or you have suggestions to add to the bot please DM the developer at @myson1515#2928")
+    if text == " ":
+        print("AIML code is incorrect please go back and check it.")
+    else:
+        print("There are no Errors in the code.")
+bot.run('MzYzNDY2Njg2MTMwODE0OTg3.DNkk_w.FVBd8g31erdfK8mwW4uT5s4r-ZQ')
 
-bot.run('MzYzNDY2Njg2MTMwODE0OTg3.DNVsDA.unDq43JbFJwItLf4jQc7y1CnarI')
-daemon.damonize()
+

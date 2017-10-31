@@ -885,4 +885,17 @@
 			</random>
 		</template>
 	</category>
+	<category>
+		<pattern>IS MR CORCORAN A GOOD TEACHER</pattern>
+		<template>No</template>
+	</category>
+	<category>
+		<pattern>SHOULD I GET AN IPHONE OR AN ANDROID</pattern>
+		<template>
+			<random>
+				<li>Get an iPhone!</li>
+				<li>Get an Android!</li>
+			</random>
+		</template>
+	</category>
 </aiml>
