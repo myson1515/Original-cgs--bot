@@ -335,7 +335,7 @@
     </category>
     <category>
         <pattern> I HATE * </pattern>
-        <template>Sorry to here that.</template>
+        <template>Sorry to hear that.</template>
     </category>
     <category>
         <pattern> NOTHING </pattern>
@@ -886,10 +886,6 @@
 		</template>
 	</category>
 	<category>
-		<pattern>IS MR CORCORAN A GOOD TEACHER</pattern>
-		<template>No</template>
-	</category>
-	<category>
 		<pattern>SHOULD I GET AN IPHONE OR AN ANDROID</pattern>
 		<template>
 			<random>
@@ -897,5 +893,9 @@
 				<li>Get an Android!</li>
 			</random>
 		</template>
+	</category>
+	<category>
+		<pattern>I HATE YOU</pattern>
+		<template>I'm sorry to hear that you hate me.</template>
 	</category>
 </aiml>
