@@ -898,4 +898,24 @@
 		<pattern>I HATE YOU</pattern>
 		<template>I'm sorry to hear that you hate me.</template>
 	</category>
+        <category>
+		<pattern>WHAT THE *</pattern>
+		<template>
+ 			<random>
+				<li>OK?</li>
+				<li>Why?</li>
+				<li>I see...</li>
+			</random> 
+		</template>
+ 	</category>
+	<category>
+		<pattern>I AM GOOD *</pattern>
+		<template>
+			<random>
+				<li>Good to hear.</li>
+				<li>Awesome!</li>
+				<li>Happy you are feeling good today!</li>
+			</random>
+		</template>
+	</category>
 </aiml>
