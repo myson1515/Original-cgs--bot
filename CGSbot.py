@@ -59,6 +59,6 @@ async def on_message(message):
         print("AIML code is incorrect please go back and check it.")
     else:
         print("There are no Errors in the code.")
-bot.run('MzYzNDY2Njg2MTMwODE0OTg3.DNkk_w.FVBd8g31erdfK8mwW4uT5s4r-ZQ')
+bot.run('MzYzNDY2Njg2MTMwODE0OTg3.DON7bg.tHigSHJgbaVEBguNea2V3IVH-EQ')
 
 
