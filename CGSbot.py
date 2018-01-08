@@ -22,8 +22,11 @@ pid = "/tmp/cgsbot.pid"
 #text = fileToOpen
 
 
-
-
+def get_role(server_roles, target_name):
+    for each in server_roles:
+        if each.name == target_name:
+            return each
+        return None
 @bot.event
 async def on_message(message):
     mesString = message.content
@@ -56,8 +59,23 @@ async def on_message(message):
         await bot.send_message(channel, "To talk to my artificial inteligence module please type !cgsbot 'what you want to say to the bot'")
         await bot.send_message(channel, "This bot is still in beta testing and may go offline occasionally.  This is because we are working on adding some new features to benefit you.")
         await bot.send_message(channel, "--------------\n If there are any issues with the bot or you have suggestions to add to the bot please DM the developer at @myson1515#2928")
-    if message.content.startswith("!changeMyColor"):
-        await bot.edit_role(message.server, message.author.roles[0], colour=discord.Colour.red())
+    if message.content.startswith("!listRoles"):
+        allroles = bot.get_server("362621829569052676").roles
+        count = 1
+        finalMessage = " "
+        for y in allroles:
+           finalMessage += str(y) + "\n"
+        await bot.send_message(channel, "The Following are the Roles of this Server (The bottom 6 are the ones you can change too): \n" + finalMessage)
+    if message.content.startswith("!changeColor"):
+        #await bot.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red(), name='Test')
+        print("###Roles###")
+        allroles = bot.get_server("362621829569052676").roles
+        #await bot.edit_role(message.server, allroles[8], colour=discord.Colour.red())
+        await bot.add_roles(message.author, allroles[8])
+        #for y in allroles:
+         #   print(y)
+        #if "Purple" in [y.name.lower() for y in message.author.roles]:
+           # print("Purple spotted")
         await bot.send_message(channel, "The Color has been changed.")
     if text == " ":
         print("AIML code is incorrect please go back and check it.")
