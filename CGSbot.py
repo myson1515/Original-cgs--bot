@@ -43,8 +43,9 @@ async def on_message(message):
     fileToOpen = open("transfer.txt")
     lines = fileToOpen.readlines()
     mesStringFinal = mesString[8:]
+    mesStringFinal2 = mesString[13:]
     fileToWrite.write(mesStringFinal)
-    #print(mesStringFinal)
+    print(mesStringFinal2)
     fileToWrite.close()
     os.system("python2 readToFile.py")
     fileToOpen2 = open("transfer.txt").read()
@@ -70,8 +71,22 @@ async def on_message(message):
         #await bot.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red(), name='Test')
         print("###Roles###")
         allroles = bot.get_server("362621829569052676").roles
+        if mesStringFinal2 == "Yellow":
+           await bot.add_roles(message.author, allroles[13])
+        if mesStringFinal2 == "Pink":
+           await bot.add_roles(message.author, allroles[12])
+        if mesStringFinal2 == "Green":
+           await bot.add_roles(message.author, allroles[11])
+        if mesStringFinal2 == "Blue":
+           await bot.add_roles(message.author, allroles[10])
+        if mesStringFinal2 == "Red":
+           await bot.add_roles(message.author, allroles[9])
+        if mesStringFinal2 == "Purple":
+           await bot.add_roles(message.author, allroles[8])
+
+
         #await bot.edit_role(message.server, allroles[8], colour=discord.Colour.red())
-        await bot.add_roles(message.author, allroles[8])
+        #await bot.add_roles(message.author, allroles[8])
         #for y in allroles:
          #   print(y)
         #if "Purple" in [y.name.lower() for y in message.author.roles]:
