@@ -1,7 +1,11 @@
+import nacl
 import giphypop
+import youtube_dl
+import urllib
 from giphypop import translate
 import datetime
 import os
+import re
 import asyncio
 import discord
 from daemonize import Daemonize
@@ -24,11 +28,6 @@ pid = "/tmp/cgsbot.pid"
 #text = fileToOpen
 
 
-def get_role(server_roles, target_name):
-    for each in server_roles:
-        if each.name == target_name:
-            return each
-        return None
 @bot.event
 async def on_message(message):
     mesString = message.content
@@ -45,6 +44,7 @@ async def on_message(message):
     fileToOpen = open("transfer.txt")
     lines = fileToOpen.readlines()
     mesStringFinal3 = mesString[7:]
+    mesStringFinal4 = mesString[10:]
     mesStringFinal = mesString[8:]
     mesStringFinal2 = mesString[13:]
     fileToWrite.write(mesStringFinal)
@@ -77,7 +77,23 @@ async def on_message(message):
         g = giphypop.Giphy()
         results = [x for x in g.search(mesStringFinal3)]
         await bot.send_message(channel, results[0])
-
+    if message.content.startswith("!playMusic"):
+        searchText = mesStringFinal4
+        query = urllib.parse.urlencode({"search_query": searchText})
+        url = "https://www.youtube.com/results?search_query=" + query
+        html_content = urllib.request.urlopen("http://www.youtube.com/results?" + query)
+        search_results = re.findall(r'href=\"\/watch\?v=(.{11})', html_content.read().decode())
+        finalLink = "http://www.youtube.com/watch?v=" + search_results[0]
+        global voice
+        channel2 = bot.get_channel("400765530950074368")
+        voice = await bot.join_voice_channel(channel2)
+        global player
+        player = await voice.create_ytdl_player(finalLink)
+#        await bot.send_message(channel2, "Starting the music player.")
+        player.start()
+    if message.content.startswith("!stopMusic"):
+#        await bot.send_message(channel2, "Stopping the music player.")
+        player.stop()
     if message.content.startswith("!changeColor"):
         #await bot.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red(), name='Test')
         #print("###Roles###")
