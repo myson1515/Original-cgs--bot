@@ -1,3 +1,5 @@
+import giphypop
+from giphypop import translate
 import datetime
 import os
 import asyncio
@@ -42,6 +44,7 @@ async def on_message(message):
     fileToWrite = open("transfer.txt", "w")
     fileToOpen = open("transfer.txt")
     lines = fileToOpen.readlines()
+    mesStringFinal3 = mesString[7:]
     mesStringFinal = mesString[8:]
     mesStringFinal2 = mesString[13:]
     fileToWrite.write(mesStringFinal)
@@ -56,7 +59,7 @@ async def on_message(message):
         #await client.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red())
         await bot.send_message(channel, text)
     if message.content.startswith("!help"):
-        helpMessage = "Welcome to help!\n ------------- \n To talk to my AI type !cgsbot then what you would like to say to the AI \n ----------------- \n This bot is still in beta testing so if there is something wrong or you have suggestions please give feedback here: @myson1515#2928"
+        helpMessage = "Welcome to help!\n  -----------------  \nTo talk to my AI type !cgsbot then what you would like to say to the AI \n ----------------- \nThis bot is still in beta testing so if there is something wrong or you have suggestions please give feedback here: @myson1515#2928 \n  -----------------  \nCGSbot also has the capability to change your color role. \nTo get a list of available color roles please type !listRoles in the talk-with-a-bot channel. \nWhen you have found a nice color type !changeColor <the color you want>. \n ----------------- \nTo get a gif from Giphy type !getGif <the keyword of the gif you want>."
         await bot.send_message(channel, helpMessage)
     if message.content.startswith("!listRoles"):
         allroles = bot.get_server("362621829569052676").roles
@@ -65,6 +68,16 @@ async def on_message(message):
         for y in allroles[8:]:
            finalMessage += str(y) + "\n"
         await bot.send_message(channel, "The Following are the Roles of this Server: \n" + finalMessage)
+
+    if message.content.startswith("!getGif"):
+        #img = translate(mesStringFinal)
+        #await bot.send_message(channel, img.url)
+        x = ""
+        x = list(x)
+        g = giphypop.Giphy()
+        results = [x for x in g.search(mesStringFinal3)]
+        await bot.send_message(channel, results[0])
+
     if message.content.startswith("!changeColor"):
         #await bot.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red(), name='Test')
         #print("###Roles###")
