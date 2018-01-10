@@ -61,75 +61,37 @@ async def on_message(message):
     if message.content.startswith("!listRoles"):
         allroles = bot.get_server("362621829569052676").roles
         count = 1
-        finalMessage = "\n"
-        for y in allroles[8:]:
+        finalMessage = " "
+        for y in allroles:
            finalMessage += str(y) + "\n"
-        await bot.send_message(channel, "The Following are the Roles of this Server: \n" + finalMessage)
+        await bot.send_message(channel, "The Following are the Roles of this Server (The bottom 6 are the ones you can change too): \n" + finalMessage)
     if message.content.startswith("!changeColor"):
         #await bot.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red(), name='Test')
-        #print("###Roles###")
+        print("###Roles###")
         allroles = bot.get_server("362621829569052676").roles
         if mesStringFinal2 == "Yellow":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[13], allroles[1], allroles[5])
-
-               #await bot.replace_roles(message.author, allroles[13], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[13], allroles[1], allroles[5])
-           else:
-               await bot.replace_roles(message.author, allroles[13])
+           await bot.remove_roles(message.author, allroles[13], allroles[12], allroles[11], allroles[10], allroles[9],allroles[8])
            #await bot.add_roles(message.author, allroles[13])
            await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Pink":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[12], allroles[1], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[12], allroles[1], allroles[5])
-           else:
-               await bot.add_roles(message.author, allroles[13])
-               await bot.replace_roles(message.author, allroles[12])
+           await bot.remove_roles(message.author, allroles[12])
            #await bot.add_roles(message.author, allroles[12])
            await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Green":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[11], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[11], allroles[1], allroles[5])
-           else:
-               await bot.replace_roles(message.author, allroles[11])
-           #await bot.replace_roles(message.author,allroles[11])
+           await bot.remove_roles(message.author, allroles[11])
            #await bot.add_roles(message.author, allroles[11])
            await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Blue":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[10], allroles[1], allroles[5])
-               #await bot.replace_roles(message.author, allroles[10], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[10], allroles[1], allroles[5])
-           else:
-               await bot.replace_roles(message.author, allroles[10])
+           await bot.remove_roles(message.author, allroles[10])
            #await bot.add_roles(message.author, allroles[10])
            await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Red":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[9], allroles[1], allroles[5])
-
-               #await bot.replace_roles(message.author, allroles[9], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[9], allroles[1], allroles[5])
-           else:
-               await bot.replace_roles(message.author, allroles[9])
-           #await bot.replace_roles(message.author, allroles[9])
+           await bot.remove_roles(message.author, allroles[9])
            #await bot.add_roles(message.author, allroles[9])
            await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Purple":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[8], allroles[1], allroles[5])
-               #await bot.replace_roles(message.author, allroles[8], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[8], allroles[1], allroles[5])
-           else:
-               await bot.replace_roles(message.author, allroles[8])
+           await bot.remove_roles(message.author, allroles[8])
+           #await bot.add_roles(message.author, allroles[8])
            await bot.send_message(channel, "The Color has been changed.")
         else:
            await bot.send_message(channel, "Not a valid role please read !listRoles")
