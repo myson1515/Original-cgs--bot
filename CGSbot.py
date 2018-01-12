@@ -45,12 +45,12 @@ async def on_message(message):
     fileToOpen = open("transfer.txt")
     lines = fileToOpen.readlines()
     mesStringFinal3 = mesString[7:]
-    mesStringFinal5 = mesString[11:]
+    mesStringFinal5 = mesString[12:]
     mesStringFinal4 = mesString[10:]
     mesStringFinal = mesString[8:]
     mesStringFinal2 = mesString[13:]
     fileToWrite.write(mesStringFinal)
-#    print(mesStringFinal2)
+    print(mesStringFinal5)
     fileToWrite.close()
     os.system("python2 readToFile.py")
     fileToOpen2 = open("transfer.txt").read()
@@ -61,7 +61,7 @@ async def on_message(message):
         #await client.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red())
         await bot.send_message(channel, text)
     if message.content.startswith("!help"):
-        helpMessage = "Welcome to help!\n  -----------------  \nTo talk to my AI type !cgsbot then what you would like to say to the AI \n ----------------- \nI am still in beta testing so if there is something wrong or you have suggestions please give feedback here: @myson1515#2928 \n  -----------------  \nI also have the capability to change your color role. \nTo get a list of available color roles please type !listRoles in the talk-with-a-bot channel. \nWhen you have found a nice color type !changeColor <the color you want>. \n ----------------- \nTo get a gif from Giphy type !getGif <the keyword of the gif you want>.\n ----------------- \nYou can make suggestions on songs to play with an Admin or Moderator in the playlist_suggestions channel.  If they approve of a song I will play it in the music channel. \n  ----------------- \nIf you are an Ambassador or a Teacher please use this command !changeRole to change to the role you belong in."
+        helpMessage = "Welcome to help!\n  -----------------  \nTo talk to my AI type !knowAll then what you would like to say to the AI \n ----------------- \nI am still in beta testing so if there is something wrong or you have suggestions please give feedback here: @myson1515#2928 \n  -----------------  \nI also have the capability to change your color role. \nTo get a list of available color roles please type !listRoles in the talk-with-a-bot channel. \nWhen you have found a nice color type !changeColor <the color you want>. \n ----------------- \nTo get a gif from Giphy type !getGif <the keyword of the gif you want>.\n ----------------- \nYou can make suggestions on songs to play with an Admin or Moderator in the playlist_suggestions channel.  If they approve of a song I will play it in the music channel. \n  ----------------- \nIf you are an Ambassador or a Teacher please use this command !changeRole to change to the role you belong in."
         await bot.send_message(channel, helpMessage)
     if message.content.startswith("!listRoles"):
         allroles = bot.get_server("362621829569052676").roles
@@ -117,16 +117,33 @@ async def on_message(message):
             player.stop()
 #        player = await voice.create_ytdl_player(finalLink)
     if message.content.startswith("!changeRole"):
+        allroles = bot.get_server("362621829569052676").roles
+        authorRoles = []
+        for role in message.author.roles:
+            authorRoles.append(str(role.name))
+            print(str(role.name))
         if mesStringFinal5 == "Chinese":
-           await bot.add_roles(message.author, allroles[3])
+           if "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+               await bot.send_message(channel, "You already have a Role.  For more info please contact an Admin.")
+           else:
+               await bot.add_roles(message.author, allroles[3])
+               await bot.send_message(channel, "The Role has been changed.")
         elif mesStringFinal5 == "Japanese":
-           await bot.add_roles(message.author, allroles[2])
+           if "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+               await bot.send_message(channel, "You already have a Role.  For more information please contact an Admin.")
+           else:
+               await bot.add_roles(message.author, allroles[2])
+               await bot.send_message(channel, "The Role has been changed.")
         elif mesStringFinal5 == "Arabic":
-           await bot.add_roles(message.author, allroles[4])
+           if "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+               await bot.send_message(channel, "You already have a Role.  For more information please contact an Admin.")
+           else:
+               await bot.add_roles(message.author, allroles[4])
+               await bot.send_message(channel, "The Role has been changed.")
         elif mesStringFinal5 == "Ambassador":
-           await bot.add_roles(message.author, allroles[14])
+           await bot.send_message("To change to this role you must contact an Admin.")
         elif mesStringFinal5 == "Teacher":
-           await bot.add_roles(message.author, allroles[15])
+           await bot.send_message("To change to this role you must contact an Admin.")
     if message.content.startswith("!changeColor"):
         #await bot.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red(), name='Test')
         #print("###Roles###")
