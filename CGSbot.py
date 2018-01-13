@@ -145,81 +145,123 @@ async def on_message(message):
         elif mesStringFinal5 == "Teacher":
            await bot.send_message(channel,"To change to this role you must contact an Admin.")
     if message.content.startswith("!changeColor"):
+        authorRoles = []
+        for role in message.author.roles:
+            authorRoles.append(str(role.name))
+            print(str(role.name))
+        print("--------")
+        print(authorRoles[2])
+        rememberRole = message.author.roles[2]
         #await bot.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red(), name='Test')
         #print("###Roles###")
         allroles = bot.get_server("362621829569052676").roles
         if mesStringFinal2 == "Yellow":
-           if str(message.author) == "myson1515#2928":
+           if "Admin" in authorRoles:
                await bot.replace_roles(message.author, allroles[13], allroles[1], allroles[5])
-
-               #await bot.replace_roles(message.author, allroles[13], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[13], allroles[1], allroles[5])
-           else:
+               await bot.add_roles(message.author, rememberRole)
+           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+#               rememberRole = authorRole[3]
+#               print("HERE!!!!!")
+#               print(rememberRole)
                await bot.replace_roles(message.author, allroles[13])
-           #await bot.add_roles(message.author, allroles[13])
-           await bot.send_message(channel, "The Color has been changed.")
-        elif mesStringFinal2 == "Pink":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[12], allroles[1], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[12], allroles[1], allroles[5])
+               await bot.add_roles(message.author, rememberRole)
+               await bot.send_message(channel, "The Color has been changed.")
+
            else:
                await bot.add_roles(message.author, allroles[13])
+#               await bot.replace_roles(message.author, allroles[12])
+           #await bot.add_roles(message.author, allroles[12])
+           await bot.send_message(channel, "The Color has been changed.")
+        elif mesStringFinal2 == "Pink":
+           if "Admin" in authorRoles:
+               await bot.replace_roles(message.author, allroles[12], allroles[1], allroles[5])
+               await bot.add_roles(message.author, rememberRole)
+           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+#               rememberRole = authorRole[3]
+#               print("HERE!!!!!")
+#               print(rememberRole)
                await bot.replace_roles(message.author, allroles[12])
+               await bot.add_roles(message.author, rememberRole)
+               await bot.send_message(channel, "The Color has been changed.")
+
+           else:
+               await bot.add_roles(message.author, allroles[12])
+#               await bot.replace_roles(message.author, allroles[12])
            #await bot.add_roles(message.author, allroles[12])
            await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Green":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[11], allroles[5])
-           elif str(message.author) == "Maosre#6219":
+           if "Admin" in authorRoles:
                await bot.replace_roles(message.author, allroles[11], allroles[1], allroles[5])
-           else:
+               await bot.add_roles(message.author, rememberRole)
+           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+#               rememberRole = authorRole[3]
+#               print("HERE!!!!!")
+#               print(rememberRole)
                await bot.replace_roles(message.author, allroles[11])
-           #await bot.replace_roles(message.author,allroles[11])
-           #await bot.add_roles(message.author, allroles[11])
-           await bot.send_message(channel, "The Color has been changed.")
-        elif mesStringFinal2 == "Blue":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[10], allroles[1], allroles[5])
-               #await bot.replace_roles(message.author, allroles[10], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[10], allroles[1], allroles[5])
-           else:
-               await bot.replace_roles(message.author, allroles[10])
-           #await bot.add_roles(message.author, allroles[10])
-           await bot.send_message(channel, "The Color has been changed.")
-        elif mesStringFinal2 == "Red":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[9], allroles[1], allroles[5])
+               await bot.add_roles(message.author, rememberRole)
+               await bot.send_message(channel, "The Color has been changed.")
 
-               #await bot.replace_roles(message.author, allroles[9], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[9], allroles[1], allroles[5])
            else:
-               await bot.replace_roles(message.author, allroles[9])
-           #await bot.replace_roles(message.author, allroles[9])
-           #await bot.add_roles(message.author, allroles[9])
+               await bot.add_roles(message.author, allroles[11])
+#               await bot.replace_roles(message.author, allroles[12])
+           #await bot.add_roles(message.author, allroles[12])
            await bot.send_message(channel, "The Color has been changed.")
-        elif mesStringFinal2 == "Purple":
-           if str(message.author) == "myson1515#2928":
-               await bot.replace_roles(message.author, allroles[8], allroles[1], allroles[5])
-               #await bot.replace_roles(message.author, allroles[8], allroles[5])
-           elif str(message.author) == "Maosre#6219":
-               await bot.replace_roles(message.author, allroles[8], allroles[1], allroles[5])
-           else:
-               await bot.replace_roles(message.author, allroles[8])
-           await bot.send_message(channel, "The Color has been changed.")
-        else:
-           await bot.send_message(channel, "Not a valid role please read !listRoles")
-
-        #await bot.edit_role(message.server, allroles[8], colour=discord.Colour.red())
         #await bot.add_roles(message.author, allroles[8])
         #for y in allroles:
          #   print(y)
         #if "Purple" in [y.name.lower() for y in message.author.roles]:
            # print("Purple spotted")
-    
+        elif mesStringFinal2 == "Blue":
+           if "Admin" in authorRoles:
+               await bot.replace_roles(message.author, allroles[10], allroles[1], allroles[5])
+               await bot.add_roles(message.author, rememberRole)
+           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+#               rememberRole = authorRole[3]
+#               print("HERE!!!!!")
+#               print(rememberRole)
+               await bot.replace_roles(message.author, allroles[10])
+               await bot.add_roles(message.author, rememberRole)
+               await bot.send_message(channel, "The Color has been changed.")
+
+           else:
+               await bot.add_roles(message.author, allroles[10])
+#               await bot.replace_roles(message.author, allroles[12])
+           #await bot.add_roles(message.author, allroles[12])
+           await bot.send_message(channel, "The Color has been changed.")
+        elif mesStringFinal2 == "Red":
+           if "Admin" in authorRoles:
+               await bot.replace_roles(message.author, allroles[9], allroles[1], allroles[5])
+               await bot.add_roles(message.author, rememberRole)
+           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+#               rememberRole = authorRole[3]
+#               print("HERE!!!!!")
+#               print(rememberRole)
+               await bot.replace_roles(message.author, allroles[9])
+               await bot.add_roles(message.author, rememberRole)
+               await bot.send_message(channel, "The Color has been changed.")
+
+           else:
+               await bot.add_roles(message.author, allroles[9])
+#               await bot.replace_roles(message.author, allroles[12])
+           #await bot.add_roles(message.author, allroles[12])
+           await bot.send_message(channel, "The Color has been changed.")
+        elif mesStringFinal2 == "Purple":
+           if "Admin" in authorRoles:
+               await bot.replace_roles(message.author, allroles[8], allroles[1], allroles[5])
+               await bot.add_roles(message.author, rememberRole)
+           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+#               rememberRole = authorRole[3]
+#               print("HERE!!!!!")
+#               print(rememberRole)
+               await bot.replace_roles(message.author, allroles[8])
+               await bot.add_roles(message.author, rememberRole)
+               await bot.send_message(channel, "The Color has been changed.")
+
+           else:
+               await bot.add_roles(message.author, allroles[8])
+#               await bot.replace_roles(message.author, allroles[12])
+           #await bot.add_roles(message.author, allroles[12])
+           await bot.send_message(channel, "The Color has been changed.")    
     if text == " ":
         print("AIML code is incorrect please go back and check it.")
     else:
