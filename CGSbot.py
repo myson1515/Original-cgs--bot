@@ -141,9 +141,9 @@ async def on_message(message):
                await bot.add_roles(message.author, allroles[4])
                await bot.send_message(channel, "The Role has been changed.")
         elif mesStringFinal5 == "Ambassador":
-           await bot.send_message("To change to this role you must contact an Admin.")
+           await bot.send_message(channel,"To change to this role you must contact an Admin.")
         elif mesStringFinal5 == "Teacher":
-           await bot.send_message("To change to this role you must contact an Admin.")
+           await bot.send_message(channel,"To change to this role you must contact an Admin.")
     if message.content.startswith("!changeColor"):
         #await bot.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red(), name='Test')
         #print("###Roles###")
