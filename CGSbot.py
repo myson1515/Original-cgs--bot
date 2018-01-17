@@ -50,20 +50,32 @@ async def on_message(message):
     mesStringFinal = mesString[8:]
     mesStringFinal2 = mesString[13:]
     fileToWrite.write(mesStringFinal)
-    print(mesStringFinal5)
+ #   print(mesStringFinal5)
     fileToWrite.close()
     os.system("python2 readToFile.py")
     fileToOpen2 = open("transfer.txt").read()
     text = fileToOpen2
     channel = message.channel
-    if message.content.startswith("!knowAll"):
+    badWords = ("fuck", "bitch", "dick", "shit")
+    for i in range(0, len(badWords)):
+        if badWords[i] in str(message.content):
+            print(i)
+            swearFile = open("SwearUsers.txt", "a+")
+            swearFile.write(str(message.author) + "\n")
+            await bot.send_message(channel, str(message.author) + " Please do not swear anytime on this server.  Your message has been deleted. This incident will be recorded.")
+            await bot.delete_message(message)
+            swearFile.close()
+#        else:
+#            break
+       # await bot.edit_message(message,"~~" + message.content + "~~")
         #print(text)
         #await client.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red())
+    if message.content.startswith("!knowAll"):
         await bot.send_message(channel, text)
-    if message.content.startswith("!help"):
+    elif message.content.startswith("!help"):
         helpMessage = "Welcome to help!\n  -----------------  \nTo talk to my AI type !knowAll then what you would like to say to the AI \n ----------------- \nI am still in beta testing so if there is something wrong or you have suggestions please give feedback here: @myson1515#2928 \n  -----------------  \nI also have the capability to change your color role. \nTo get a list of available color roles please type !listRoles in the talk-with-a-bot channel. \nWhen you have found a nice color type !changeColor <the color you want>. \n ----------------- \nTo get a gif from Giphy type !getGif <the keyword of the gif you want>.\n ----------------- \nYou can make suggestions on songs to play with an Admin or Moderator in the playlist_suggestions channel.  If they approve of a song I will play it in the music channel. \n  ----------------- \nIf you are an Ambassador or a Teacher please use this command !changeRole to change to the role you belong in (The options are Japanese, Chinese, and Arabic)."
         await bot.send_message(channel, helpMessage)
-    if message.content.startswith("!listRoles"):
+    elif message.content.startswith("!listRoles"):
         allroles = bot.get_server("362621829569052676").roles
         count = 1
         finalMessage = "\n"
@@ -71,7 +83,7 @@ async def on_message(message):
            finalMessage += str(y) + "\n"
         await bot.send_message(channel, "The Following are the Roles of this Server: \n" + finalMessage)
 
-    if message.content.startswith("!getGif"):
+    elif message.content.startswith("!getGif"):
         #img = translate(mesStringFinal)
         #await bot.send_message(channel, img.url)
         x = ""
@@ -79,7 +91,7 @@ async def on_message(message):
         g = giphypop.Giphy()
         results = [x for x in g.search(mesStringFinal3)]
         await bot.send_message(channel, results[0])
-    if message.content.startswith("!playMusic"):
+    elif message.content.startswith("!playMusic"):
         searchText = mesStringFinal4
         query = urllib.parse.urlencode({"search_query": searchText})
         url = "https://www.youtube.com/results?search_query=" + query
@@ -101,7 +113,7 @@ async def on_message(message):
         #player.stop()
             player = await voice.create_ytdl_player(finalLink)
             player.start()
-    if message.content.startswith("!stopMusic"):
+    elif message.content.startswith("!stopMusic"):
         #if voice.is_connected():
          #   print("Connected")
 #        voice.disconnect()
@@ -116,7 +128,7 @@ async def on_message(message):
             print("Stopping...")
             player.stop()
 #        player = await voice.create_ytdl_player(finalLink)
-    if message.content.startswith("!changeRole"):
+    elif message.content.startswith("!changeRole"):
         allroles = bot.get_server("362621829569052676").roles
         authorRoles = []
         for role in message.author.roles:
@@ -144,7 +156,7 @@ async def on_message(message):
            await bot.send_message(channel,"To change to this role you must contact an Admin.")
         elif mesStringFinal5 == "Teacher":
            await bot.send_message(channel,"To change to this role you must contact an Admin.")
-    if message.content.startswith("!changeColor"):
+    elif message.content.startswith("!changeColor"):
         authorRoles = []
         for role in message.author.roles:
             authorRoles.append(str(role.name))
@@ -262,7 +274,7 @@ async def on_message(message):
 #               await bot.replace_roles(message.author, allroles[12])
            #await bot.add_roles(message.author, allroles[12])
            await bot.send_message(channel, "The Color has been changed.")    
-    if text == " ":
+    elif text == " ":
         print("AIML code is incorrect please go back and check it.")
     else:
         print("There are no Errors in the code.")
