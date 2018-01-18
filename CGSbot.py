@@ -157,13 +157,19 @@ async def on_message(message):
         elif mesStringFinal5 == "Teacher":
            await bot.send_message(channel,"To change to this role you must contact an Admin.")
     elif message.content.startswith("!changeColor"):
+# Color Roles Defined Below
+        ColorRoles = ["Chinese Students", "Japanese Students", "Arabic Students"]
         authorRoles = []
         for role in message.author.roles:
             authorRoles.append(str(role.name))
             print(str(role.name))
         print("--------")
-        print(authorRoles[2])
-        rememberRole = message.author.roles[2]
+#        print(authorRoles[2])
+#        print(message.author.roles)
+        if len(message.author.roles) == 2:
+            rememberRole = message.author.roles[1]
+        else:
+            rememberRole = message.author.roles[2]
         #await bot.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red(), name='Test')
         #print("###Roles###")
         allroles = bot.get_server("362621829569052676").roles
@@ -171,7 +177,7 @@ async def on_message(message):
            if "Admin" in authorRoles:
                await bot.replace_roles(message.author, allroles[13], allroles[1], allroles[5])
                await bot.add_roles(message.author, rememberRole)
-           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+           elif [x for x in ColorRoles if x in authorRoles]:
 #               rememberRole = authorRole[3]
 #               print("HERE!!!!!")
 #               print(rememberRole)
@@ -183,12 +189,12 @@ async def on_message(message):
                await bot.add_roles(message.author, allroles[13])
 #               await bot.replace_roles(message.author, allroles[12])
            #await bot.add_roles(message.author, allroles[12])
-           await bot.send_message(channel, "The Color has been changed.")
+               await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Pink":
            if "Admin" in authorRoles:
                await bot.replace_roles(message.author, allroles[12], allroles[1], allroles[5])
                await bot.add_roles(message.author, rememberRole)
-           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+           elif [x for x in ColorRoles if x in authorRoles]: #"Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles
 #               rememberRole = authorRole[3]
 #               print("HERE!!!!!")
 #               print(rememberRole)
@@ -200,12 +206,12 @@ async def on_message(message):
                await bot.add_roles(message.author, allroles[12])
 #               await bot.replace_roles(message.author, allroles[12])
            #await bot.add_roles(message.author, allroles[12])
-           await bot.send_message(channel, "The Color has been changed.")
+               await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Green":
            if "Admin" in authorRoles:
                await bot.replace_roles(message.author, allroles[11], allroles[1], allroles[5])
                await bot.add_roles(message.author, rememberRole)
-           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+           elif [x for x in ColorRoles if x in authorRoles]: #elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles
 #               rememberRole = authorRole[3]
 #               print("HERE!!!!!")
 #               print(rememberRole)
@@ -217,7 +223,7 @@ async def on_message(message):
                await bot.add_roles(message.author, allroles[11])
 #               await bot.replace_roles(message.author, allroles[12])
            #await bot.add_roles(message.author, allroles[12])
-           await bot.send_message(channel, "The Color has been changed.")
+               await bot.send_message(channel, "The Color has been changed.")
         #await bot.add_roles(message.author, allroles[8])
         #for y in allroles:
          #   print(y)
@@ -227,7 +233,7 @@ async def on_message(message):
            if "Admin" in authorRoles:
                await bot.replace_roles(message.author, allroles[10], allroles[1], allroles[5])
                await bot.add_roles(message.author, rememberRole)
-           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+           elif [x for x in ColorRoles if x in authorRoles]: #elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles
 #               rememberRole = authorRole[3]
 #               print("HERE!!!!!")
 #               print(rememberRole)
@@ -239,12 +245,12 @@ async def on_message(message):
                await bot.add_roles(message.author, allroles[10])
 #               await bot.replace_roles(message.author, allroles[12])
            #await bot.add_roles(message.author, allroles[12])
-           await bot.send_message(channel, "The Color has been changed.")
+               await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Red":
            if "Admin" in authorRoles:
                await bot.replace_roles(message.author, allroles[9], allroles[1], allroles[5])
                await bot.add_roles(message.author, rememberRole)
-           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+           elif [x for x in ColorRoles if x in authorRoles]:  #elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles
 #               rememberRole = authorRole[3]
 #               print("HERE!!!!!")
 #               print(rememberRole)
@@ -256,12 +262,12 @@ async def on_message(message):
                await bot.add_roles(message.author, allroles[9])
 #               await bot.replace_roles(message.author, allroles[12])
            #await bot.add_roles(message.author, allroles[12])
-           await bot.send_message(channel, "The Color has been changed.")
+               await bot.send_message(channel, "The Color has been changed.")
         elif mesStringFinal2 == "Purple":
            if "Admin" in authorRoles:
                await bot.replace_roles(message.author, allroles[8], allroles[1], allroles[5])
                await bot.add_roles(message.author, rememberRole)
-           elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles:
+           elif [x for x in ColorRoles if x in authorRoles]: #  elif "Chinese Students" in authorRoles or "Japanese Students" in authorRoles or "Arabic Students" in authorRoles
 #               rememberRole = authorRole[3]
 #               print("HERE!!!!!")
 #               print(rememberRole)
@@ -273,7 +279,7 @@ async def on_message(message):
                await bot.add_roles(message.author, allroles[8])
 #               await bot.replace_roles(message.author, allroles[12])
            #await bot.add_roles(message.author, allroles[12])
-           await bot.send_message(channel, "The Color has been changed.")    
+               await bot.send_message(channel, "The Color has been changed.")    
     elif text == " ":
         print("AIML code is incorrect please go back and check it.")
     else:
