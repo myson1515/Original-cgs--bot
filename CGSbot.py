@@ -10,8 +10,6 @@ import asyncio
 import discord
 from daemonize import Daemonize
 from discord.ext import commands
-#print(datetime.datetime.now())
-#print("Bot File loaded...")
 count = 0
 player = None
 def empty():
@@ -19,14 +17,7 @@ def empty():
 bot = commands.Bot(command_prefix='prefix', description='Chatterbox')
 pid = "/tmp/cgsbot.pid"
 
-#fileToWrite = open("transfer.txt", "w")
-#startREAD = "start"
 
-#fileToWrite.write("hi \n1")
-#fileToWrite.close()
-#os.system("python2 readToFile.py")
-#fileToOpen = open("transfer.txt").read()
-#text = fileToOpen
 
 
 @bot.event
@@ -34,13 +25,6 @@ async def on_message(message):
     mesString = message.content
     fileToOpen = open("transfer.txt")
     lines = fileToOpen.readlines()
-    #os.system("python2 readToFile.py")
-#    if lines[0] == 1:
-#        fileToWrite = open("transfer.txt", "w")
-#        fileToOpen = open("transfer.txt")
-#        lines = fileToOpen.readlines()
-#        mesStringFinal = mesString[8:]
-#        fileToWrite.write(mesStringFinal)
     fileToWrite = open("transfer.txt", "w")
     fileToOpen = open("transfer.txt")
     lines = fileToOpen.readlines()
@@ -50,7 +34,6 @@ async def on_message(message):
     mesStringFinal = mesString[8:]
     mesStringFinal2 = mesString[13:]
     fileToWrite.write(mesStringFinal)
- #   print(mesStringFinal5)
     fileToWrite.close()
     os.system("python2 readToFile.py")
     fileToOpen2 = open("transfer.txt").read()
@@ -65,11 +48,6 @@ async def on_message(message):
             await bot.send_message(channel, str(message.author) + " Please do not swear anytime on this server.  Your message has been deleted. This incident will be recorded.")
             await bot.delete_message(message)
             swearFile.close()
-#        else:
-#            break
-       # await bot.edit_message(message,"~~" + message.content + "~~")
-        #print(text)
-        #await client.edit_role(message.server, message.author.roles[1], colour=discord.Colour.red())
     if message.content.startswith("!knowAll"):
         await bot.send_message(channel, text)
     elif message.content.startswith("!help"):
@@ -84,8 +62,6 @@ async def on_message(message):
         await bot.send_message(channel, "The Following are the Roles of this Server: \n" + finalMessage)
 
     elif message.content.startswith("!getGif"):
-        #img = translate(mesStringFinal)
-        #await bot.send_message(channel, img.url)
         x = ""
         x = list(x)
         g = giphypop.Giphy()
@@ -102,32 +78,21 @@ async def on_message(message):
         global voice
         global player
         channel2 = bot.get_channel("400765530950074368")
-        #voice = await bot.join_voice_channel(channel2)
         if player is None:
             print("Starting Music...")
             voice = await bot.join_voice_channel(channel2)
             player = await voice.create_ytdl_player(finalLink)
             player.start()
         else:
-#        await bot.send_message(channel2, "Starting the music player.")
-        #player.stop()
             player = await voice.create_ytdl_player(finalLink)
             player.start()
     elif message.content.startswith("!stopMusic"):
-        #if voice.is_connected():
-         #   print("Connected")
-#        voice.disconnect()
-#        stopMusic()
-#        await bot.send_message(channel2, "Stopping the music player.")
         if player == None:
-#            player = await voice.create_ytdl_player(finalLink)
             print("Stopping...")
             player.stop()
         else:
-#            player = await voice.create_ytdl_player(finalLink)
             print("Stopping...")
             player.stop()
-#        player = await voice.create_ytdl_player(finalLink)
     elif message.content.startswith("!changeRole"):
         allroles = bot.get_server("362621829569052676").roles
         authorRoles = []

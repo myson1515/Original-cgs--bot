@@ -918,4 +918,14 @@
 			</random>
 		</template>
 	</category>
+	<category>
+		<pattern>HOWS IT GOING *</pattern>
+		<template>
+			<random>
+  				<li>Good thanks.</li>
+				<li>Not so good.</li>
+ 				<li>Eh. So so.</li>
+			</random>
+		</template>
+     	</category>
 </aiml>
