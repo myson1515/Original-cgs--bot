@@ -114,7 +114,7 @@
         <template>
             <random>
                 <li>Thanks, I like to think that I could one day be a comedian</li>
-                <li>I try to chear people up</li>
+                <li>I try to cheer people up</li>
                 <li>Thanks!</li>
             </random>
         </template>
@@ -398,11 +398,11 @@
         <template>Please do not swear.</template>
     </category>
     <category>
-        <pattern> FUCK * </pattern>
+        <pattern> * FUCK * </pattern>
         <template>Please do not swear.</template>
     </category>
     <category>
-        <pattern> SHIT </pattern>
+        <pattern> * SHIT * </pattern>
         <template>Please do not swear.</template>
     </category>
     <category>
@@ -455,10 +455,6 @@
     <category>
         <pattern> WHO DID * </pattern>
         <template>Mason L.</template>
-    </category>
-    <category>
-        <pattern> WHO KILLED THE JEWS </pattern>
-        <template>The most horrible man ever to exist: Adolf Hitler</template>
     </category>
     <category>
         <pattern> HOW OLD ARE YOU </pattern>
@@ -636,7 +632,7 @@
         <template>
             <random>
                 <li>That isn't good</li>
-                <li>I am sorry to hear that</li>
+                <li>I am sorry to here that</li>
             </random>
         </template>
     </category>
