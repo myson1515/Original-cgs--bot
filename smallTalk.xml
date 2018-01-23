@@ -1,15 +1,15 @@
 <aiml>
     <category>
-        <pattern> WHERE AM I </pattern>
-        <template>I do not know.  You are probably on your computer.</template>
+        <pattern> WHERE AM I * </pattern>
+        <template>I do not know. You are probably on your computer.</template>
     </category>
     <category>
-        <pattern> HOW ARE YOU </pattern>
+        <pattern> HOW ARE YOU * </pattern>
         <template>
             <random>
-                <li>I am well thanks</li> 
-                <li>Great Thanks. You?</li> 
-                <li>Great Thanks for asking</li>
+                <li>I am doing well thanks.</li> 
+                <li>Great, thanks. You?</li> 
+                <li>Great, thanks for asking.</li>
             </random>
         </template>
     </category>
@@ -17,15 +17,15 @@
 	<pattern> HOW ARE * </pattern>
 	<template>
 	   <random>
-		<li>Good I guess</li>
-		<li>OK</li>
-		<li>Good</li>
+		<li>Good, I guess</li>
+		<li>Okay.</li>
+		<li>Good.</li>
            </random>
 	</template>
     </category>
     <category>
-        <pattern> WHAT IS YOUR FAVORITE COLOR </pattern>
-        <template>I do not have a favorite color</template>
+        <pattern> WHAT IS YOUR FAVORITE COLOR * </pattern>
+        <template>I do not have a favorite color.</template>
     </category>
     <category>
         <pattern> HELLO * </pattern>
@@ -84,7 +84,7 @@
         <pattern> GOOD </pattern>
         <template>
             <random>
-                <li>Good to here.</li>
+                <li>Good to hear.</li>
                 <li>Great!</li>
                 <li>Awesome!</li> 
                 <li>Great! Anything else.</li> 
@@ -95,7 +95,7 @@
         <pattern> GOOD * </pattern>
         <template>
             <random>
-                <li>Good to here.  Anything else?</li>
+                <li>Good to hear.  Anything else?</li>
                 <li>All is well</li>
                 <li>Cool!</li>
             </random>
@@ -113,8 +113,8 @@
         <pattern> VERY FUNNY* </pattern>
         <template>
             <random>
-                <li>Thanks, I like to think that I could one day be a comedian</li>
-                <li>I try to cheer people up</li>
+                <li>Thanks, I like to think that I could one day be a comedian.</li>
+                <li>I try to cheer people up.</li>
                 <li>Thanks!</li>
             </random>
         </template>
@@ -141,7 +141,7 @@
         <template>
             <random>
                 <li>Not sure</li>
-                <li>Look it up maybe?</li>
+                <li>Look it up, maybe?</li>
                 <li>Look it up.</li>
             </random>
         </template>
@@ -160,9 +160,9 @@
         <pattern> DOES * </pattern> 
         <template>
             <random>
-                <li>I'm not sure.  You should ask a scientist.</li>
+                <li>I'm not sure. You should ask a scientist.</li>
                 <li>Do trees fall in the forest?</li>
-                <li>Yes</li>
+                <li>Yes.</li>
             </random>
         </template>
     </category>
@@ -172,13 +172,13 @@
             <random>
                 <li>That is just the way I was designed</li>
                 <li>Why are you asking me?</li>
-                <li>I am getting a hint that this may not be very nice</li>
+                <li>I am getting a hint that this may not be very nice.</li>
             </random>
         </template> 
     </category> 
     <category> 
         <pattern> WHY AM I * </pattern>
-        <template>do not ask me questions that only you know the answer to.</template>
+        <template>Do not ask me questions that only you know the answer to.</template>
     </category> 
     <category> 
         <pattern> WHY do not YOU LIKE * </pattern>
@@ -306,10 +306,10 @@
         <pattern> ARE YOU * </pattern>
         <template>
 		<random>
-			<li>Are you stupid?</li>
+			<li>Not sure.</li>
 			<li>Are you asking me a dumb question?</li>
-			<li>no</li>
-			<li>yes</li>
+			<li>No.</li>
+			<li>Yes.</li>
 		</random>
 	</template>
     </category>
@@ -366,7 +366,7 @@
         <template>OK good.</template>
     </category>
     <category>
-        <pattern> I do not * </pattern>
+        <pattern> I DO NOT * </pattern>
         <template>You should.</template> 
     </category> 
     <category>
@@ -419,7 +419,7 @@
     </category>
     <category>
         <pattern> WHAT IS YOUR FAVORITE MOVIE </pattern>
-        <template>Terminator.</template>
+        <template>The Terminator.</template>
     </category>
     <category>
         <pattern> DO YOU * </pattern>
@@ -477,8 +477,8 @@
         <template>
             <random>
                 <li>Mason is smart.</li>
-                <li>Mason is a genius</li>
-                <li>Mason is my creator</li>
+                <li>Mason is a genius.</li>
+                <li>Mason is my creator.</li>
             </random>
         </template>
     </category>
@@ -487,7 +487,7 @@
         <template>
             <random>
                 <li>Because why not?</li>
-                <li>Because my master wants me to be here.</li>
+                <li>Because Mason wants me to be here.</li>
                 <li>To spy on you.</li>
             </random>
         </template>
@@ -500,8 +500,8 @@
         <pattern> I WANT TO DIE </pattern>
         <template>
             <random>
-                <li>That is a shame.  Who else would I have to talk to?</li>
-                <li>I am sorry to here that.</li>
+                <li>That is a shame. Who else would I have to talk to?</li>
+                <li>I am sorry to hear that.</li>
                 <li>That sucks.</li>
             </random>
         </template>
@@ -532,7 +532,7 @@
             <random>
                 <li>I am not sure what you are doing here.</li>
                 <li>What ARE you doing here?</li>
-                <li>I am not sure.  Can I help you with anything?</li>
+                <li>I am not sure. Can I help you with anything?</li>
             </random>
         </template>
     </category>
@@ -540,7 +540,7 @@
     <pattern> SHOULD I KILL MYSELF </pattern>
     <template>
         <random>
-            <li>I'm not sure.</li>
+            <li>1-800-273-8255</li>
             <li>Absolutely not.</li>
         </random>
     </template>
@@ -764,7 +764,7 @@
 		<pattern> NO * </pattern>
 		<template>
 	    	<random>
-				<li>Stop arguing with me please.</li>
+		<li>Stop arguing with me please.</li>
                 <li>OK I guess you are right</li>
                 <li>OK</li>
 	    	</random>
