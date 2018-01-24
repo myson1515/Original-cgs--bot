@@ -803,10 +803,7 @@
                 <li>What?</li>
             </random>
         </template>
-    </category>
-    <category>
-	<pattern> MARCUS LOVES MEN </pattern>
-	<template> true </template>
+    </
     </category>
     <category>
 	<pattern> HOW DO I KILL MYSELF * </pattern>
@@ -916,13 +913,4 @@
 			</random>
 		</template>
      	</category>
-	<category>
-		<pattern> WHAT SHOULD I EAT * </pattern>
-		<template>
-			<random>
-				<li>Blue Cactus Grill ~ 2.4 miles from your school.</li>
-				<li>Rincon Taqueria ~ 1.4 miles from your school.</li>
-				</random>
-			</template>
-		</category>
 </aiml>
