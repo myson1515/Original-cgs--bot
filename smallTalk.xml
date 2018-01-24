@@ -917,7 +917,7 @@
 		</template>
      	</category>
 	<category>
-		<pattern> WHAT SHOULD I EAT * </pattern>
+		<pattern> WHAT SHOULD I EAT </pattern>
 		<template>
 			<random>
 				<li>Blue Cactus Grill ~ 2.4 miles from your school.</li>
