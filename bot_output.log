@@ -49,3 +49,132 @@ Saving brain to brain.brn... done (0.00 seconds)
 2018-01-31 16:39:58.367838
 Loading smallTalk.xml... done (0.02 seconds)
 Saving brain to brain.brn... done (0.00 seconds)
+2018-02-02 04:23:07.383435
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-02 12:37:50.998490
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-02 13:18:32.503190
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:42:49.636790
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:45:11.193566
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:45:19.028622
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:45:21.761473
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:45:28.228736
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+Task exception was never retrieved
+future: <Task finished coro=<WebSocketCommonProtocol.run() done, defined at /home/ubuntu/.local/lib/python3.5/site-packages/websockets/protocol.py:428> exception=ConnectionResetError(104, 'Connection reset by peer')>
+Traceback (most recent call last):
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 241, in _step
+    result = coro.throw(exc)
+  File "/home/ubuntu/.local/lib/python3.5/site-packages/websockets/protocol.py", line 434, in run
+    msg = yield from self.read_message()
+  File "/home/ubuntu/.local/lib/python3.5/site-packages/websockets/protocol.py", line 456, in read_message
+    frame = yield from self.read_data_frame(max_size=self.max_size)
+  File "/home/ubuntu/.local/lib/python3.5/site-packages/websockets/protocol.py", line 511, in read_data_frame
+    frame = yield from self.read_frame(max_size)
+  File "/home/ubuntu/.local/lib/python3.5/site-packages/websockets/protocol.py", line 546, in read_frame
+    self.reader.readexactly, is_masked, max_size=max_size)
+  File "/home/ubuntu/.local/lib/python3.5/site-packages/websockets/framing.py", line 86, in read_frame
+    data = yield from reader(2)
+  File "/usr/lib/python3.5/asyncio/streams.py", line 670, in readexactly
+    block = yield from self.read(n)
+  File "/usr/lib/python3.5/asyncio/streams.py", line 627, in read
+    yield from self._wait_for_data('read')
+  File "/usr/lib/python3.5/asyncio/streams.py", line 457, in _wait_for_data
+    yield from self._waiter
+  File "/usr/lib/python3.5/asyncio/futures.py", line 361, in __iter__
+    yield self  # This tells Task to wait for completion.
+  File "/usr/lib/python3.5/asyncio/tasks.py", line 296, in _wakeup
+    future.result()
+  File "/usr/lib/python3.5/asyncio/futures.py", line 274, in result
+    raise self._exception
+  File "/usr/lib/python3.5/asyncio/selector_events.py", line 662, in _read_ready
+    data = self._sock.recv(self.max_size)
+ConnectionResetError: [Errno 104] Connection reset by peer
+2018-02-03 03:45:38.280761
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:45:39.841506
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:45:45.228211
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:45:52.083606
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:45:55.755693
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:46:26.296067
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:46:34.965230
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:46:38.981686
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:46:47.964841
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:48:08.204794
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 03:48:19.274358
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-03 04:03:58.292254
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-04 02:26:44.584556
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-05 00:17:10.386854
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-05 00:30:51.980427
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-05 00:50:58.915288
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-05 04:46:47.607125
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-05 13:24:55.606777
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-06 04:01:57.652409
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-06 06:02:55.442659
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-06 06:05:49.958367
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-06 21:58:34.266536
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-06 21:59:24.336264
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-07 02:09:32.448056
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
+2018-02-07 21:25:43.121501
+Loading smallTalk.xml... done (0.02 seconds)
+Saving brain to brain.brn... done (0.00 seconds)
